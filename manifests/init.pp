@@ -48,6 +48,8 @@
 #   perfsonar-lsregistrationdaemon service ensure
 # @param lsregistrationdaemon_enable
 #   perfsonar-lsregistrationdaemon service enable
+# @param maddash_package
+#   The MaDDash package(s) to install
 class perfsonar (
   Boolean $manage_repo = true,
   Boolean $manage_epel = true,
@@ -75,6 +77,8 @@ class perfsonar (
   Boolean $manage_lsregistrationdaemon = false,
   Stdlib::Ensure::Service $lsregistrationdaemon_ensure = 'running',
   Boolean $lsregistrationdaemon_enable = true,
+  # MaDDash
+  Array $maddash_package = ['maddash'],
 ) {
 
   if $manage_repo {
