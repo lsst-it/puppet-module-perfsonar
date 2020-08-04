@@ -78,7 +78,7 @@ class perfsonar (
   Stdlib::Ensure::Service $lsregistrationdaemon_ensure = 'running',
   Boolean $lsregistrationdaemon_enable = true,
   # MaDDash
-  Array $maddash_package = ['maddash'],
+  Array $maddash_package = ['maddash', 'perfsonar-psconfig-maddash'],
 ) {
 
   if $manage_repo {

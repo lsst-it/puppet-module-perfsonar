@@ -8,6 +8,7 @@ describe 'perfsonar::maddash' do
       it { is_expected.to compile.with_all_deps }
 
       it { is_expected.to contain_package('maddash') }
+      it { is_expected.to contain_package('perfsonar-psconfig-maddash') }
     end
   end
 end
