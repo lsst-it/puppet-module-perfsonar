@@ -44,10 +44,10 @@ class perfsonar::firewall {
     $_i = sprintf('%05d', $index)
     $rule['proto'].each |String $proto| {
       firewall { "${_i} ${rule['name']} ${proto} ipv4":
-        proto  => $proto,
-        dport  => $rule['dport'],
-        chain  => 'perfSONAR',
-        action => 'accept',
+        proto => $proto,
+        dport => $rule['dport'],
+        chain => 'perfSONAR',
+        jump  => 'accept',
       }
     }
   }
@@ -71,7 +71,7 @@ class perfsonar::firewall {
           proto    => $proto,
           dport    => $rule['dport'],
           chain    => 'perfSONAR',
-          action   => 'accept',
+          jump     => 'accept',
           provider => 'ip6tables',
         }
       }
